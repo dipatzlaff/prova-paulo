@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-left: 3%;
+  background-color: #000000;
+}
+
+h1,
+h2,
+h3 {
+  color: #000000;
+  font-size: medium;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  max-width: 230px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.jogador {
+  width: 45px;
+}
+.flex > h3 {
+  margin-left: 15px;
+}
+.titulo {
+  font-size: 25px;
+}
