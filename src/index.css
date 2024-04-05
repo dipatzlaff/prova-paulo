@@ -11,7 +11,7 @@ body {
 h1,
 h2,
 h3 {
-  color: #000000;
+  color: #13d3c3;
   font-size: medium;
 }
 .flex {
@@ -19,17 +19,17 @@ h3 {
   align-items: center;
 }
 .logo {
-  max-width: 230px;
+  max-width: 500px;
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 .jogador {
-  width: 45px;
+  width: 100px;
 }
 .flex > h3 {
   margin-left: 15px;
 }
 .titulo {
-  font-size: 25px;
+  font-size: 100px;
 }

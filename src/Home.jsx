@@ -7,6 +7,7 @@ import Header from './Header'
 
 function Home() {
   const [personagens, setPersonagens] = useState([])
+  const [nomePersonagem, setNomePersonagem] = useState('')
   const [status, setStatus] = useState([])
 const personagensFiltrados = personagens.filter(personagem => status == "" ? true : personagem.status.toLowerCase() == status)
 
@@ -24,6 +25,21 @@ const personagensFiltrados = personagens.filter(personagem => status == "" ? tru
 
     fetchData()
   }, [])
+  const buscarPersonagem = async () => {
+    try {
+      console.log(status)
+      console.log('Sucesso buscar personagem');
+      const response = await axios.get(`https://rickandmortyapi.com/api/character/?name=${nomePersonagem}&status=${status}`);
+      
+      console.log(response.data.results )
+      setPersonagens(response.data.results)
+    } catch (erro) {
+      console.log('Erro')
+      if (erro.message == 'Request failed with status code 404') {
+        setPersonagens([])
+      }
+    }
+  }
 
   return (
     <>
@@ -31,9 +47,10 @@ const personagensFiltrados = personagens.filter(personagem => status == "" ? tru
       <h1>lista de Personagens</h1>
       <input
         type='text'
-        onChange={(evento) => setPersonagens(evento.target.value)}
+        value={nomePersonagem}
+        onChange={(evento) => setNomePersonagem(evento.target.value)}
       />
-      <button >Pesquisar</button>
+      <input type="button" value='Pesquisar' onClick={buscarPersonagem}></input>
       <select  onChange={(evento) => setStatus(evento.target.value)}>
         <option value="alive">Vivo</option>
         <option value="dead">Morto</option>
