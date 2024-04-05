@@ -1,10 +1,10 @@
 function Header() {
-  const logoCartola =
-    'https://logodownload.org/wp-content/uploads/2017/05/cartola-fc-logo-5.png'
+  const logoRickandMorty =
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1280px-Rick_and_Morty.svg.png'
   return (
     <>
       <header>
-        <img className='logo' src={logoCartola} alt='' />
+        <img className='logo' src={logoRickandMorty} alt='' />
       </header>
     </>
   )
